@@ -1,6 +1,8 @@
 // vars/pipelineWithDependencyTrack.groovy
 
-def call(Map params = [:]) {
+def call(Map config = [:]) { // Allow for configuration parameters
+pipeline {
+        agent any
     environment {
         DTRACK_API_KEY = params.get('DTRACK_API_KEY', 'default_api_key')
         DTRACK_URL = params.get('DTRACK_URL', 'http://default-url')
@@ -59,5 +61,7 @@ def call(Map params = [:]) {
                 }
             }
         }
-    }
-}
+
+
+
+
