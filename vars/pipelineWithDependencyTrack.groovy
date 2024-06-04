@@ -44,7 +44,7 @@ def call(Map config = [:]) { // Allow for configuration parameters
                     sh """
                         echo "done critical count is ${criticalCount} "
                     """
-                    if (criticalCount.toInteger() >= 2) {
+                    if (criticalCount.toInteger() >= ${requirement_count}) {
                         error("Pipeline failed due to ${criticalCount} critical vulnerabilities.")
                     } else {
                         echo "Pipeline passed with ${criticalCount} critical vulnerabilities."
