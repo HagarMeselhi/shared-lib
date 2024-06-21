@@ -2,11 +2,11 @@ def call(Map config) {
     pipeline {
         agent any
         environment {
-            DTRACK_API_KEY = config.DTRACK_API_KEY
-            DTRACK_URL = config.DTRACK_URL
-            PROJECT_NAME = config.PROJECT_NAME
-            REPO1_DIR = config.REPO1_DIR
-            REPO2_DIR = config.REPO2_DIR
+            DTRACK_API_KEY = "${config.DTRACK_API_KEY}"
+            DTRACK_URL = "${config.DTRACK_URL}"
+            PROJECT_NAME = "${config.PROJECT_NAME}"
+            REPO1_DIR = "${config.REPO1_DIR}"
+            REPO2_DIR = "${config.REPO2_DIR}"
         }
         stages {
             stage('Install dependencies') {
